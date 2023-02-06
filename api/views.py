@@ -63,7 +63,7 @@ def post_delete(request, slug):
 
 @api_view(["POST"])
 def post_create(request):
-    user = request.user
+    user = request.user.id
     post = Post(author=user)
     if request.method == "POST":
         serializer = PostSerializer(post, data=request.data)
